@@ -1,0 +1,36 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="{% static 'css/login1.css' %}" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/fb4fb8c853.js" crossorigin="anonymous"></script>
+</head>
+<body>
+<br>
+<br>
+<center style="color:white"><i class="fa-solid fa-school fa-4x"></i></center>
+<h1 align="center"><span>Login Page</span></h1>
+<form action="logdata" method="post">
+    {% csrf_token %}
+    <h3 align="center">{{ data }}</h3>
+    <h3>
+        <table align="center">
+        <tr>
+            <td>UserName:</td>
+            <td><input type="text" name="username" placeholder="enter your name" style="background:transparent"></td>
+        </tr>
+        <tr>
+            <td>Password:</td>
+            <td><input type="password" name="pass" placeholder="enter your password" style="background:transparent"></td>
+        </tr>
+        <tr>
+            <td><b><input type="submit" value="LOGIN" name="submit" style="background:transparent;color:red"></b></td>
+            <td><a href="{% url 'register'%}">Signup</a></td>
+        </tr>
+        </table>
+        </h3>
+</form>
+</body>
+</html>
